@@ -20,6 +20,7 @@ end
     title: Faker::Book.title,
     genre: Faker::Book.genre,
     price: rand(5..30),
+    summary: Faker::Hipster.paragraphs(6),
     author_id: rand(1..@authors)
   )
 end

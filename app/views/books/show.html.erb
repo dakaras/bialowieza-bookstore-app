@@ -1,0 +1,9 @@
+<img style="-webkit-user-select: none;cursor: zoom-in;" src="https://images.wisegeek.com/two-shelves-of-books.jpg" width="1300" height="300">
+
+<h3><%= @book.title %></h3>
+<p> Author: <%= @book.author.name %></p>
+<p> Price: $ <%= @book.price %></p>
+
+<p>Summary: <%= @book.summary %></p>
+
+<%= link_to  "Back to Books", root_path %>

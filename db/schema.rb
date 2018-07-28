@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_07_28_165321) do
     t.string "title"
     t.string "genre"
     t.integer "price"
+    t.string "summary"
     t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
