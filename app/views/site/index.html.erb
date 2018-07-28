@@ -3,6 +3,6 @@
 <img style="-webkit-user-select: none;cursor: zoom-in;" src="http://u.profitroom.pl/hotel-zubrowka.pl/uploads/thumbs/1600x900/201311081336390.baner_las_80proc.jpg?1532476800026" width="1300" height="408">
 <ul>
   <% @books.each do |book| %>
-    <p><%= link_to book.title, book_path(book) %> <%= book.genre %></p><br>
+    <p>Book: <%= link_to book.title, book_path(book) %><br> Author: <%= link_to book.author.name, author_path(book.author) %><br> Price: $ <%= book.price %><br>  Genre: <%= book.genre %></p><br>
   <% end %>
 </ul>
