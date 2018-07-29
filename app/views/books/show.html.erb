@@ -1,9 +1,9 @@
 <img style="-webkit-user-select: none;cursor: zoom-in;" src="https://images.wisegeek.com/two-shelves-of-books.jpg" width="1300" height="300">
 
-<h3><%= @book.title %></h3>
-<p> Author: <%= @book.author.name %></p>
-<p> Price: $ <%= @book.price %></p>
-
-<p>Summary: <%= @book.summary %></p>
+<strong><h2><%= @book.title %></h2></strong>
+<strong><h3> Author: <%= @book.author.name %></h3></strong>
+<strong><p> Price: $ <%= @book.price %></p></strong>
+<strong><p>Summary: </strong><%= @book.summary %></p>
+<h3><%= link_to "Add to Shopping Cart" %></h3>
 
 <%= link_to  "Back to Books", root_path %>
