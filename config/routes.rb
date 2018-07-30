@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  resources :users
   root 'site#index'
   get '/welcome' => 'site#index'
   get '/about' => 'site#about'
-  resources :list_items
-  resources :shopping_carts
+  resources :list_items, only: [:create, :destroy, :index]
+  resources :shopping_carts, only: [:show]
   resources :authors
   resources :books
 

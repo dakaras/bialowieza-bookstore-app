@@ -5,6 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# Create users
+5.times do
+  @user = User.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password(min_length = 6, max_length = 12),
+  )
+  @shopping_cart = ShoppingCart.create(user_id: @user.id)
+end
 
 # Create Authors
 10.times do

@@ -21,7 +21,7 @@ Model Associations:
 User
 -has_one :shopping_cart
 
-Shopping_Cart(current order)
+Shopping_Cart(current list)
 -belongs_to :user
 -has_many :list_items
 -has_many :books, through: :list_items
