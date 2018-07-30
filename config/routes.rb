@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'site#index'
   get '/welcome' => 'site#index'
   get '/about' => 'site#about'
-
+  resources :shopping_carts
   resources :authors
   resources :books
 
