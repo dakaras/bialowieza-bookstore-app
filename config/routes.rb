@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :users
   root 'site#index'
   get '/welcome' => 'site#index'
   get '/about' => 'site#about'
+  resources :users, only: [:new, :create]
   resources :list_items, only: [:create, :destroy, :index]
   resources :shopping_carts, only: [:show]
   resources :authors
