@@ -1,13 +1,15 @@
 class ShoppingCartsController < ApplicationController
+  def index
+    @shopping_cart = ListItem.all
+  end
+
+  def new
+    @shopping_cart = ShoppingCart.find_by(user_id: params[:user_id])
+    @shopping_cart.clear
+    redirect_to welcome_path
+  end
 
   def show
     @shopping_cart = ShoppingCart.find_by(id: params[:id])
   end
 end
-# def show
-#     if params[:id].to_i == current_user.id
-#       redirect_to user_dishes_path(current_user)
-#     else
-#       @list = List.find_by(id: params[:id])
-#     end
-# end

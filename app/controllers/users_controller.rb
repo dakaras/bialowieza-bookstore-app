@@ -5,8 +5,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    @user.build_shopping_cart
     if @user.save
       session[:user_id] = @user.id
+      @shopping_cart = ShoppingCart.create(user_id: @user.id)
       redirect_to welcome_path, alert: "You have successfully created a new user account."
     else
       render 'users/new'
