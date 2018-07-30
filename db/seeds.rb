@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 # Create users
 5.times do
   @user = User.create(
@@ -31,5 +32,16 @@ end
     price: rand(5..30),
     summary: Faker::Hipster.paragraphs(6),
     author_id: rand(1..@authors)
+  )
+end
+
+@books = Book.all
+@users = User.all.size
+
+# Create List_Items
+@books.each do |book|
+  ListItem.create(
+    shopping_cart_id: rand(1..@users),
+    book_id: book.id
   )
 end
