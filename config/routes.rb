@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  get '/login' => 'sessions#new'
-  post '/sessions' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+  get '/login', to: 'sessions#new'
+  post '/sessions', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
 
   root 'site#index'
-  get '/welcome' => 'site#index'
-  get '/about' => 'site#about'
+  get '/welcome', to:  'site#index'
+  get '/about', to: 'site#about'
+  get '/new_user', to: 'users#new', as: 'signup'
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :shopping_carts do
@@ -14,6 +15,6 @@ Rails.application.routes.draw do
   resources :authors do
     resources :books, only: [:show]
   end
-
+  resources :books, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
