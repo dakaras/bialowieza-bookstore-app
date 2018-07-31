@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one :shopping_cart
+  has_one :shopping_cart, dependent: :destroy 
   has_secure_password
 
   validates :name, presence: true

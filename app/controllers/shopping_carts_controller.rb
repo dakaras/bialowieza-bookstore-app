@@ -9,7 +9,7 @@ class ShoppingCartsController < ApplicationController
   end
 
   def destroy
-    @shopping_cart = ShoppingCart.find_by(user_id: params[:user_id])
+    @shopping_cart = ShoppingCart.find_by(id: params[:id])
     @shopping_cart.clear
     redirect_to welcome_path
   end
