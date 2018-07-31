@@ -16,7 +16,7 @@
       <strong><%= link_to "Shopping Cart" %></strong><br>
       <strong><%= link_to "Log Out", logout_path %></strong>
     <% else %>
-      <%= link_to "Log In", login_path %>
+      <%= link_to "Log In", login_path %><br>
       <%= link_to "Sign up for a Bialowieza Account", signup_path %>
     <% end %>
     <%= content_tag(:div, flash[:error], id: "flash_error") if flash[:error] %>
