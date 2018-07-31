@@ -1,5 +1,6 @@
+<h1><%= current_user.name %> Shopping Cart </h1>
 <% @shopping_cart.list_items.each do |book| %>
-  <%= book.title %>
-  <%= book.price %>
-  <%= book.quantity %>
+  <strong><%= book.title %></strong>
+  <strong><%= book.price %></strong>
+  <strong><%= book.quantity %></strong>
 <% end %>
