@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  get '/auth/:provider/callback', to: 'sessions#create'
 
   root 'site#index'
   get '/welcome', to:  'site#index'
@@ -10,9 +11,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :shopping_carts do
-    resources :list_items, only: [:patch, :create, :destroy, :index]
-  end
+  resources :shopping_carts
+  resources :list_items
+  post '/list_items/new/:id', to: 'listitems#create', as: 'add'
   resources :authors do
     resources :books, only: [:show]
   end

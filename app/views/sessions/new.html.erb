@@ -1,7 +1,7 @@
-<%= form_tag(sessions_path) do %>
+<%= form_tag(sessions_path) do %><br>
   Email: <%= text_field_tag :email %><br><br>
   Password:<%= password_field_tag :password %><br><br>
 
   <%= submit_tag "Log in" %><br>
 <% end %>
-<h3><%= link_to  "Home", root_path %></h3>
+<button><%= link_to  "Home", root_path %></button>

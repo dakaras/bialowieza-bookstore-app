@@ -1,7 +1,12 @@
 class ShoppingCartsController < ApplicationController
   before_action :authorize
   def index
-    @shopping_cart = ListItem.all
+    @shopping_cart = ShoppingCart.find_by(id: params[:id])
+  end
+
+  def new
+    shopping_cart = ShoppingCart.find_by(id: params[:id])
+    @list_item = shopping_cart.create_list_item
   end
 
   def show

@@ -8,12 +8,12 @@
 [x] Include signup (how e.g. Devise)
 [x] Include login (how e.g. Devise)
 [x] Include logout (how e.g. Devise)
-[] Include third party signup/login (how e.g. Devise/OmniAuth)
+[x] Include third party signup/login (how e.g. Devise/OmniAuth)
 [x] Include nested resource show or index (URL e.g. authors/1/books/1)
 [] Include nested resource "new" form (URL e.g. users/:user_id/shopping_cart/new)
 [x] Include form display of validation errors (form URL e.g. /recipes/new)
-[] The application is DRY
-[] Move logic in controllers to models
+[x] The application is DRY
+[x] Move logic in controllers to models
 [x] Use helper methods in controllers as needed for views
 [x] Views use partials as needed in views
 
