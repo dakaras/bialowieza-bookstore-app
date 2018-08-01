@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :shopping_carts
   resources :list_items
-  post '/list_items/new/:id', to: 'listitems#create', as: 'add'
+  post '/list_items/new/:id', to: 'listitems#create', as: 'add_book'
   resources :authors do
     resources :books, only: [:show]
   end
