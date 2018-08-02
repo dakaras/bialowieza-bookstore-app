@@ -7,4 +7,5 @@ class ShoppingCart < ApplicationRecord
     self.list_items.create(book_id: book_id)
     @book = Book.find_by(id: book_id)
   end
+ 
 end

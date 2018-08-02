@@ -3,6 +3,6 @@
 <strong><h2><%= @book.title %></h2></strong>
 <strong><h3> Author: <%= link_to @book.author.name, author_path(@book.author) %></h3></strong>
 <strong><p> Price: $ <%= @book.price %></p></strong>
-<%= link_to "Add to Cart",  add_book_path(@book) %><img src="https://image.freepik.com/free-icon/shopping-cart-of-checkered-design_318-50865.jpg" width="30" height="30"><br><br>
+<%= link_to "Add to Cart", new_list_item_path(@book) %><img src="https://image.freepik.com/free-icon/shopping-cart-of-checkered-design_318-50865.jpg" width="30" height="30"><br><br>
 <strong>Summary:</strong> <p><%= @book.summary %></p>
 <h3><%= link_to  "Home", root_path %></h3>

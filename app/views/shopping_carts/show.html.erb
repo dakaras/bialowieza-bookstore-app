@@ -1,6 +1,7 @@
-<h1><%= current_user.name %> Shopping Cart </h1>
-<% @shopping_cart.list_items.each do |book| %>
-  <strong><%= book.title %></strong>
-  <strong><%= book.price %></strong>
-  <strong><%= book.quantity %></strong>
+<h1><%= @current_user.name %> Shopping Cart </h1>
+<% @current_user.shopping_cart.list_items.each do |list_item| %>
+  <strong><%= list_item.title %></strong>
+  <strong><%= list_item.price %></strong>
+  <strong><%= list_item.quantity %></strong>
 <% end %>
+<h3><%= link_to  "Home", root_path %></h3>

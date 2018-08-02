@@ -7,14 +7,12 @@ class ListItemsController < ApplicationController
 
   def new #adds book to current user's shopping cart
     @list_item =  @current_user.shopping_cart.list_items.create(book_id: params[:book_id])
-    @book = Book.find(params[:book_id])
+    @current_user.shopping_cart.add_item(@list_item)
+    cart = @current_user.shopping_cart
+    redirect_to  shopping_cart_path(cart), alert: "You have added a book to your Shopping Cart!"
   end
 
-  def patch #updates quantity of books or deletes them
-
-  end
-
-  def destroy #removes list_item from shopping cart of current user
-
+  def show
+    @current_user.shopping_cart.list_items
   end
 end
