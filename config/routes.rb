@@ -7,18 +7,19 @@ Rails.application.routes.draw do
   root 'site#index'
   get '/welcome', to:  'site#index'
   get '/about', to: 'site#about'
-  get '/new_user', to: 'users#new', as: 'signup'
+  get '/signup', to: 'users#new'
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :shopping_carts
+  get '/shopping_carts/:id', to: 'shopping_carts#delete', as: 'checkout'
   resources :list_items
-  
-  post '/list_items/new/:id', to: 'listitems#create', as: 'add_book'
+
+  post '/list_items/create/:id', to: 'listitems#create', as: 'add_book'
   resources :authors do
     resources :books, only: [:show]
   end
 
-  resources :books, only: [:show]
+  resources :books, only: [:show, :index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

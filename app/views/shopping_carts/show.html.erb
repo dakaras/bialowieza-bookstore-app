@@ -1,7 +1,4 @@
-<h1><%= @current_user.name %> Shopping Cart </h1>
-<% @current_user.shopping_cart.list_items.each do |list_item| %>
-  <strong><%= list_item.title %></strong>
-  <strong><%= list_item.price %></strong>
-  <strong><%= list_item.quantity %></strong>
-<% end %>
+<h1>Shopping Cart for <%= @current_user.name %></h1>
+<strong><%= @lastest_book_added %></strong>
+
 <h3><%= link_to  "Home", root_path %></h3>

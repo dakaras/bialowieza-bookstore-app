@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_160218) do
     t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "quantity"
+    t.integer "quantity", default: 0
   end
 
   create_table "shopping_carts", force: :cascade do |t|

@@ -1,0 +1,21 @@
+<h3>current_user.name Shopping Cart</h3>
+
+  <% @set_cart.books.each do |item| %>
+    <p> item.itle </p>
+    <p> item.author</p>
+  <% end %>
+
+
+
+
+<!-- # app/views/posts/show.html.erb
+
+<h1>Shopping Cart for <%= @current_user.name %></h1>
+<p>
+  Content: <%= @post.content %>
+</p>
+Comments:
+  <% @cucomments.each do |comment| %>
+    <%= link_to comment.user.username, user_path(comment.user) %> said
+    <%= comment.content %>
+  <% end %> -->
