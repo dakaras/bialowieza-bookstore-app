@@ -25,7 +25,7 @@ class ShoppingCartsController < ApplicationController
   helper_method :set_cart
 
   def lastest_book_added
-    @lastest_book_added = current_user.shopping_cart.books.first
+    @lastest_book_added = current_user.shopping_cart.books 
   end
   helper_method :lastest_book_added
 

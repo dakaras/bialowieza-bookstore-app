@@ -1,6 +1,11 @@
 <%= form_for @list_item do |f| %>
-    <p><%= f.collection_check_boxes :book, @books, :id, :title %></p>
-    <p><%= f.label "Quantity" %></p>
-    <p><%= f.number_field :quantity %></li> <p>
-  <%= f.submit "Add Books to Shopping Cart" %>
+    <%= f.collection_check_boxes(:book, @books, :id, :title) do |b| %>
+    <p>
+      <%= b.label %>
+      <%= b.check_box %><br>
+      <%= f.label "Quantity" %>
+      <%= f.number_field :quantity %>
+    </p>
+    <% end %>
+  <%= f.submit "Proceed to Checkout" %>
 <% end %>
